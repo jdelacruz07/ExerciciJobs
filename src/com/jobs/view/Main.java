@@ -1,6 +1,9 @@
 package com.jobs.view;
 
+import java.util.List;
+
 import com.jobs.application.JobsController;
+import com.jobs.domain.AbsStaffMember;
 
 public class Main {
 
@@ -19,9 +22,11 @@ public class Main {
 		
 		controller.payAllEmployeers();
 		
-		String allEmployees=controller.getAllEmployees();
+		List<AbsStaffMember> allEmployees=controller.getAllEmployees();
 		
-		System.out.println("EMPLOYEES: " + allEmployees + " \n");
+		for (AbsStaffMember absStaffMember : allEmployees) {
+			System.out.println("EMPLOYEES: " + absStaffMember + " \n");	
+		}
 		
 	}
 

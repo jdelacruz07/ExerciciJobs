@@ -2,7 +2,7 @@ package com.jobs.application;
 
 import com.jobs.domain.IPaymentRate;
 
-public class PaymentFactory {
+public abstract class PaymentFactory implements IPaymentRate {
 
 	
 	public static IPaymentRate createPaymentRateBoss(){
@@ -18,8 +18,27 @@ public class PaymentFactory {
 		return new IPaymentRate() {
 			@Override
 			public double pay(double salaryPerMonth) {
-				return 0;//todo 
+				return salaryPerMonth-salaryPerMonth*15/100;
+				}
+		};
+	}
+	
+	public static IPaymentRate createPaymentRateManager(){
+		return new IPaymentRate() {
+			@Override
+			public double pay(double salaryPerMonth) {
+				return salaryPerMonth*1.1;
 			}
 		};
 	}
+
+	public double pay(double salaryPerMonth) {
+		return salaryPerMonth*1.5;
+	}
+
+	
+	
+	
+	
+	
 }

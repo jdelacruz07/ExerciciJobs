@@ -12,6 +12,7 @@ public class Employee extends AbsStaffMember {
 				
 		this.salaryPerMonth=salaryPerMonth;
 		this.paymentRate=paymentRate;
+		this.totalPaid=paymentRate.pay(salaryPerMonth);
 	}
 
 	
@@ -20,4 +21,16 @@ public class Employee extends AbsStaffMember {
 		totalPaid=paymentRate.pay(salaryPerMonth);
 	}
 
+
+	@Override
+	public String toString() {
+		return "Employee [salaryPerMonth=" + salaryPerMonth + ", paymentRate=" + paymentRate + ", id=" + id + ", name="
+				+ name + ", address=" + address + ", phone=" + phone + ", totalPaid=" + totalPaid + "]";
+	}
+
+
+	
+
+	
+	
 }
