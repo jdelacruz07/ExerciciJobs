@@ -1,12 +1,11 @@
 package com.jobs.domain;
 
 public abstract class AbsStaffMember {
-
 	protected int id;
 	protected String name;
 	protected String address;
 	protected String phone;
-	protected double totalPaid=0;
+	protected double totalPaid = 0;
 
 	private static int COUNTER_MEMBERS = 1;
 
@@ -26,4 +25,6 @@ public abstract class AbsStaffMember {
 	}
 
 	public abstract void pay();
+	
+	
 }
